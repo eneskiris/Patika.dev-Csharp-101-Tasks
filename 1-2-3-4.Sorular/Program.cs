@@ -12,13 +12,15 @@ namespace Patika.dev_Csharp101_Tasks
             //isteyin(n). Sonrasında kullanıcıdan n adet pozitif sayı girmesini
             //isteyin. Kullanıcının girmiş olduğu sayılardan çift olanlar
             //console'a yazdırın.
+            bool girdi;
             int n;
 
             while (true)
             {
                 Console.Write("Pozitif bir sayı giriniz: ");
-                n = int.Parse(Console.ReadLine());
-                if (n < 0)
+                string giris = Console.ReadLine();
+                girdi = int.TryParse(giris,out  n);
+                if (girdi == false || n<0)
                 {
                     Console.WriteLine("Lütfen pozitif bir sayi giriniz.");
                 }
@@ -41,9 +43,9 @@ namespace Patika.dev_Csharp101_Tasks
                     {
                         Console.WriteLine("Lütfen pozitif bir sayı giriniz.");
                     }
-                    else if (sayi > 0 && sayi2 % 2 == 0)
+                    else if (sayi > 0 && sayi % 2 == 0)
                     {
-                        cift.Add(sayi2);
+                        cift.Add(sayi);
                     }
                     if (sayi > 0)
                     {
